@@ -1,0 +1,37 @@
+This C program reads characters from the keyboard and prints them to the screen. Let's break it down step by step:
+
+#include <stdio.h>
+This line includes the standard input-output (stdio) library.
+It allows the program to use functions like getchar() (to read input) and putchar() (to print output).
+
+int main() {}
+
+This is the main function, where the program starts running.
+int means the function will return an integer value (0 for success).
+
+    int c;
+
+This declares a variable c of type integer.
+It will store the characters that the user inputs.
+
+    c = getchar();
+
+The getchar() function reads one character from the keyboard.
+The character is stored in the variable c.
+
+    while (c != EOF) {}
+
+This is a loop that runs as long as c is not EOF.
+EOF (End Of File) is a special value that means "no more input" (usually typed as Ctrl + D on Linux/macOS or Ctrl + Z on Windows).
+
+    putchar(c);
+
+The putchar(c) function prints the character c on the screen.
+
+    c = getchar();
+
+Reads the next character from input.
+This ensures that the loop keeps running and printing characters until the user enters EOF.
+
+    return 0;
+This indicates that the program has ended successfully.

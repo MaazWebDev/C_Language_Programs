@@ -1,0 +1,52 @@
+This C program prints a magic representation using stars (*). Let's break it down step by step.
+
+Code Explanation
+
+Declare an array of numbers
+
+int values[] = { 5, 10 , 15 , 7 , 12 };
+This array stores five numbers: 5, 10, 15, 7, 12.
+
+Find the total number of elements
+
+int n = sizeof(values) / sizeof(values[0]);
+sizeof(values) gives the total size of the array in bytes.
+
+sizeof(values[0]) gives the size of one element (an integer).
+
+Dividing both gives the number of elements in the array (n = 5).
+
+Declare a string of stars
+
+char magic[] = "*******************";
+This string contains many * characters.
+
+It will be used to display the magic representation.
+
+Print a heading
+
+printf("\n Magic Representation \n");
+printf("----------------------\n");
+Prints a title for better formatting.
+
+Loop through the values array
+
+for(int i = 0 ; i < n ; i++){
+     printf("Magic %d: %.*s(%d)\n" , i+1 , values[i] , magic , values[i]);
+}
+This loop runs 5 times (once for each number in values).
+i+1 prints Magic 1, Magic 2, Magic 3, etc.
+%.*s prints only a certain number of characters from magic.
+
+values[i] determines how many stars (*) to print.
+The last %d prints the actual number value in parentheses.
+
+Output
+
+Magic Representation 
+----------------------
+Magic 1: ***** (5)
+Magic 2: ********** (10)
+Magic 3: *************** (15)
+Magic 4: ******* (7)
+Magic 5: ************ (12)

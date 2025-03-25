@@ -1,0 +1,27 @@
+This C program prints "Hello World !" on the screen.
+
+Step-by-step Breakdown
+Include the standard input/output library:
+#include <stdio.h>
+This allows the program to use the printf function.
+
+Start the main function:
+int main(void)
+
+The program starts executing from here.
+Print "Hello ":
+
+printf("Hello ");
+This prints "Hello " (including a space after Hello).
+
+Print "World !":
+
+printf("World !");
+This prints "World !" immediately after "Hello ".
+
+Move to a new line:
+printf("\n");
+\n moves the cursor to a new line after printing "Hello World !".
+
+Final Output
+Hello World !

@@ -1,0 +1,44 @@
+This C program prints the text "Hello Maaz !\n" character by character using a while loop.
+
+Step-by-step Explanation
+Include the standard input/output library:
+
+#include <stdio.h>
+This allows the program to use the printf function.
+Start the main function:
+
+int main(void) 
+
+void in main(void)
+
+When you write: int main(void)
+The void inside the parentheses means that the function does not take any arguments.
+It tells the compiler that main does not expect any input when the program runs.
+
+Correct Alternative:
+You can also write int main() without void, and it will still work
+
+The program starts running from here.
+Declare and initialize variables:
+
+int i = 0;
+char *str = "Hello Maaz !\n";
+i is an integer variable that starts at 0.
+str is a pointer to a string containing "Hello Maaz !\n".
+Loop through each character of the string:
+
+while(str[i] != '\0') {
+    printf("%c", str[i]);
+    i++;
+}
+while(str[i] != '\0') → This loop runs until the null character \0 (which marks the end of a string).
+printf("%c", str[i]); → Prints one character at a time.
+i++ → Moves to the next character in the string.
+
+Return statement:
+
+return 0;
+This tells the system that the program finished successfully.
+
+Output
+Hello Maaz !

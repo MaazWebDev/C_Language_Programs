@@ -1,0 +1,34 @@
+This C program counts the number of characters you enter and displays the total after you signal EOF (End of File).
+
+#include <stdio.h>
+This includes the standard input-output library so we can use functions like getchar() and printf().
+
+int main() {}
+
+This is the main function, where the program starts running.
+int means the function will return an integer value (0 for success).
+
+    long nc;
+
+Declares a variable nc of type long, which will store the character count.
+
+    nc = 0;
+
+Initializes nc to 0 because we haven't counted any characters yet.
+
+    while (getchar() != EOF) {  
+
+getchar() reads one character at a time from the user.
+The loop runs until EOF (End of File) is detected.
+On Windows, EOF is entered by pressing Ctrl + Z, then pressing Enter.
+
+        ++nc;
+
+Every time a character is read, nc increases by 1.
+
+    }
+
+The loop ends when EOF is detected.
+
+printf("Total number of characters: %ld\n", nc);
+After exiting the loop, the program prints the total character count

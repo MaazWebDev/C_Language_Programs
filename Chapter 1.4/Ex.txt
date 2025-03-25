@@ -1,0 +1,44 @@
+This C program converts Fahrenheit to Celsius for a range of values from 0 to 300 Fahrenheit, increasing by 20 degrees each time.
+
+1. Include Standard Input/Output Library
+#include <stdio.h>
+This allows the program to use the printf function for output.
+
+2. Declare Variables
+float fahr, celsius;
+int lower, upper, step;
+fahr: Stores the Fahrenheit temperature.
+celsius: Stores the converted Celsius temperature.
+lower: The starting Fahrenheit value (0).
+upper: The maximum Fahrenheit value (300).
+
+step: The step size (20), meaning the temperature increases by 20 in each step.
+3. Initialize the Variables
+lower = 0 ;
+upper = 300;
+step = 20;
+Set the temperature range (0 to 300) and the step value (20).
+
+4. Start Fahrenheit at the Lower Limit
+fahr = lower;
+fahr starts from 0 and increases up to 300.
+
+5. Loop to Convert Fahrenheit to Celsius
+while (fahr <= upper)
+{
+    celsius = (5.0/9.0) * (fahr - 32.0);
+    printf("%3.0f %6.1f\n", fahr, celsius);
+    fahr += step;
+}
+
+Formula for Celsius Conversion:
+C= 9/5×(F−32)
+
+Printing the Output:
+printf("%3.0f %6.1f\n", fahr, celsius);
+%3.0f: Print Fahrenheit with 3 character width, no decimal places.
+%6.1f: Print Celsius with 6 character width, 1 decimal place.
+
+Increment Fahrenheit by Step Value (20):
+fahr += step;
+This increases fahr by 20 each time.

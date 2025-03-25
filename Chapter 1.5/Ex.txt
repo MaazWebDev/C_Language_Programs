@@ -1,0 +1,46 @@
+This C program converts Fahrenheit to Celsius for values between 0 and 30, increasing by 20 in each step.
+
+Include the standard input/output library:
+#include <stdio.h>
+Allows the use of printf() for output.
+
+Define Constants using #define:
+#define LOWER 0
+#define UPPER 30
+#define STEP 20
+
+LOWER = 0 → Starting Fahrenheit value.
+UPPER = 30 → Maximum Fahrenheit value.
+STEP = 20 → Temperature increases by 20 in each step.
+
+Loop for Conversion:
+for (fahr = LOWER; fahr <= UPPER; fahr += STEP) {
+    printf("%3d %6.1f\n", fahr, (5.0 / 9.0) * (fahr - 32));
+}
+
+Starts at fahr = LOWER (0), loops until fahr <= UPPER (30), and increases fahr by STEP (20) in each iteration.
+
+Converts Fahrenheit to Celsius using the formula:
+C= 9/5×(F−32) 
+Prints Fahrenheit (as an integer) and Celsius (with 1 decimal place).
+
+Expected Output
+  0  -17.8
+ 20   -6.7
+The loop runs for fahr = 0 and fahr = 20, but stops before fahr = 40 since 40 > 30 (upper limit).
+
+printf("%3d %6.1f\n", fahr, (5.0 / 9.0) * (fahr - 32));
+
+%3d → Prints fahr (Fahrenheit) as an integer, with at least 3 spaces width (right-aligned).
+%6.1f → Prints the Celsius value as a floating-point number with:
+At least 6 spaces width (right-aligned).
+1 decimal place (e.g., -17.8, 26.7).
+\n → Moves to a new line after printing each row.
+fahr (First Argument)
+
+This is the Fahrenheit value being printed.
+(5.0 / 9.0) * (fahr - 32) (Second Argument)
+
+Why 5.0 / 9.0 instead of 5 / 9?
+5 / 9 in C would result in integer division (which gives 0 because 5/9 is less than 1).
+5.0 / 9.0 ensures floating-point division so the calculation is accurate.
