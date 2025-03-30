@@ -1,0 +1,50 @@
+This C program generates a Fibonacci series up to n terms. It asks the user to enter the number of terms and prints the sequence accordingly.
+
+1. Include Standard Library
+
+#include <stdio.h>
+
+This includes the standard input-output library, so we can use functions like printf() and scanf().
+
+2. Start the main() Function
+
+int main() {}
+
+This is the starting point of the program.
+
+3. Declare Variables
+
+int n, first = 0, second = 1, nextTerm;
+n → Stores the number of terms entered by the user.
+first = 0 → First Fibonacci number.
+second = 1 → Second Fibonacci number.
+nextTerm → Will store the next number in the sequence.
+
+4. Take Input from the User
+
+printf("Enter a number of terms : ");
+scanf("%d", &n);
+printf() asks the user how many Fibonacci numbers to generate.
+scanf("%d", &n); takes input and stores it in n.
+
+5. Print the First Two Numbers
+
+printf("Fibonacci Series : ");
+printf("%d %d ", first, second);
+
+The first two Fibonacci numbers (0 and 1) are printed directly.
+6. Use a for Loop to Generate the Series
+
+for (int i = 1; i <= n; i++) {
+    nextTerm = first + second;
+    printf("%d ", nextTerm);
+    first = second;
+    second = nextTerm;
+}
+
+The loop runs n times to generate the next Fibonacci numbers.
+Each new term is calculated as the sum of the previous two:
+
+nextTerm = first + second;
+
+first and second are then updated to move forward in the sequence.

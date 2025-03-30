@@ -1,0 +1,88 @@
+1. Include the Library
+
+#include <stdio.h>
+This line tells the program to use the standard input/output library. It lets us use functions like printf() to show text and scanf() to get input from the user.
+
+2. Main Function and Variable Declarations
+
+int main() {}
+    double num1, num2, result;
+    char operator;
+
+main() is where the program starts.
+double num1, num2, result; are used to store numbers. We use double so they can hold decimal values (like 3.14).
+char operator; is used to store a single character. This will be the operator (like +, -, *, or /).
+
+3. Reading the First Number
+
+    printf("Enter Your First Number : ");
+    if (scanf("%lf", &num1) != 1) {
+        printf("Error! Please enter a valid number.\n");
+        return 1;
+    }
+
+printf("Enter Your First Number : "); shows a message asking the user for the first number.
+scanf("%lf", &num1) reads the number the user enters.
+if (scanf("%lf", &num1) != 1) checks if the input is not a valid number.
+If the input is not a valid number (for example, if the user enters a letter), the program prints an error message and stops by returning 1.
+
+4. Reading the Operator
+
+    printf("Enter Your Operator ( + , - , * , /) : ");
+    scanf(" %c", &operator);
+
+printf("Enter Your Operator ( + , - , * , /) : "); asks the user for an operator.
+scanf(" %c", &operator); reads a single character from the user.
+The space before %c helps ignore any leftover spaces or newlines in the input buffer.
+
+5. Validating the Operator
+
+    if (operator != '+' && operator != '-' && operator != '*' && operator != '/') {
+        printf("Error! Please enter a valid operator (+, -, *, /)\n");
+        return 1;
+    }
+This if statement checks if the entered operator is not one of the allowed symbols (+, -, *, /).
+If it is not valid, the program prints an error message and stops.
+
+6. Reading the Second Number
+
+    printf("Enter Your Second Number : ");
+    if (scanf("%lf", &num2) != 1) {
+        printf("Error! Please enter a valid number.\n");
+        return 1;
+    }
+
+The program asks for the second number.
+It reads the input using scanf("%lf", &num2) and checks if it is a valid number.
+If it is not valid, it shows an error message and stops.
+
+7. Performing the Calculation
+
+    switch (operator) {
+        case '+':
+            result = num1 + num2;
+            printf("Result : %.2lf\n", result);
+            break;
+        case '-':
+            result = num1 - num2;
+            printf("Result : %.2lf\n", result);
+            break;
+        case '*':
+            result = num1 * num2;
+            printf("Result : %.2lf\n", result);
+            break;
+        case '/':
+            if (num2 != 0) {
+                result = num1 / num2;
+                printf("Result: %.2lf\n", result);
+            } else {
+                printf("Error: Division by zero is not allowed.\n");
+            }
+            break;
+    }
+The switch statement chooses what to do based on the operator:
+
+case '/': divides the numbers.
+Before dividing, it checks if the second number is not zero (because division by zero is not allowed). If num2 is zero, it prints an error.
+printf("Result : %.2lf\n", result); prints the result with two decimal places.
+

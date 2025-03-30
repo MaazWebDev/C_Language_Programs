@@ -1,0 +1,46 @@
+This program calculates the factorial of a number entered by the user.
+
+#include <stdio.h>
+This includes the standard input-output library so we can use printf() and scanf() functions.
+
+int main() {}
+
+This is the main function, where the program starts running.
+
+    int num;
+    long long factorial = 1;
+
+num: Stores the number entered by the user.
+factorial: Stores the calculated factorial. We use long long because factorial values can be very large.
+
+    printf("Enter a Number : ");
+    scanf("%d", &num);
+
+The program asks the user to enter a number.
+scanf("%d", &num); takes input from the user and stores it in num.
+
+    if(num < 0) {
+        printf("Factorial of a negative number doesn't exist. \n");
+    }
+Checks if the number is negative.
+If num is less than 0, it prints an error message because factorial is not defined for negative numbers.
+
+    else {
+        for(int i = 1; i <= num; i++) {
+            factorial = factorial * i;
+        }
+
+If the number is positive or zero, the program calculates the factorial using a for loop:
+
+i = 1: Start from 1.
+i <= num: Run the loop until num.
+i++: Increase i by 1 in each loop.
+factorial = factorial * i;: Multiply factorial by i in every loop.
+
+
+        printf("Factorial of %d is %lld\n", num , factorial);
+    }
+
+Finally, it prints the factorial result.
+%d → for num (integer).
+%lld → for factorial (long long).

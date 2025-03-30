@@ -1,0 +1,64 @@
+This program takes text input, counts the length of each word, and then prints a vertical histogram using * symbols to show the word lengths.
+
+1. Setting Up the Program
+
+The program uses constants:
+
+MAXWORDLENGTH = 20 → The histogram can be 20 rows high.
+MAXWORDS = 25 → The program can track up to 25 words.
+
+Variables used:
+
+word_lengths[MAXWORDS] → Stores the length of each word.
+
+word_index → Used in loops to access the array.
+
+word_count → Keeps track of the number of words.
+
+word_length → Counts the number of letters in a word.
+
+character → Stores input characters.
+
+i → Used for printing the histogram.
+
+Array Initialization:
+
+A loop sets all values in word_lengths to 0.
+
+2. Reading Input and Counting Words
+
+The program reads characters one by one using getchar().
+If a space, newline (\n), or tab (\t) is found:
+It means the end of a word.
+
+If the word is not empty (word_length > 0), its length is saved.
+The counter word_count increases.
+word_length is reset to 0 for the next word.
+If a letter is found, word_length increases.
+
+Handling the Last Word:
+
+If the text does not end with a space or newline, the last word is added.
+
+3. Preparing to Print the Histogram
+
+rows = MAXWORDLENGTH → The number of rows in the histogram.
+cols = word_count → The number of words.
+total_position = rows * (cols + 1) → Calculates total characters to print (includes spaces and newlines).
+
+4. Printing the Histogram
+
+The program uses one for loop to print the histogram.
+If (i + 1) % (cols + 1) == 0, it prints a newline (\n).
+
+Otherwise:
+
+It calculates column number (col = i % (cols + 1)).
+It calculates row number (row = rows - 1 - (i / (cols + 1))).
+If the word length is greater than the row number, it prints *, otherwise a space.
+
+How the Histogram Works
+
+The longest words appear at the top of the histogram.
+The shortest words appear at the bottom.
+Words are displayed in columns.

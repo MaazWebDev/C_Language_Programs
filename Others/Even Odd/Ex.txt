@@ -1,0 +1,41 @@
+This C program checks whether a number is even or odd. Let's break it down step by step:
+
+1. Header File (#include <stdio.h>)
+This line includes the Standard Input-Output (stdio) library, which allows us to use functions like printf() and scanf() for input and output.
+
+2. Main Function (int main())
+This is the starting point of the program.
+
+3. Declaring a Variable (int num;)
+We declare an integer variable named num. This will store the number entered by the user.
+
+4. Asking for User Input (printf() and scanf())
+
+printf("Enter a number : ");
+scanf("%d", &num);
+printf() displays the message: "Enter a number : " so the user knows what to do.
+
+scanf("%d", &num); takes input from the user and stores it in the num variable.
+
+5. Checking Even or Odd (if-else Statement)
+
+if(num % 2 == 0){
+    printf("The number is even. %d\n", num);
+}else{
+    printf("The number is odd. %d\n", num);
+}
+num % 2 calculates the remainder when num is divided by 2.
+
+If the remainder is 0, it means the number is even, so it prints:
+"The number is even. [number]"
+
+Otherwise, the number is odd, so it prints:
+"The number is odd. [number]"
+
+6. Returning 0 (return 0;)
+This line tells the system that the program has successfully finished.
+
+Example Output
+
+Enter a number : 8
+The number is even. 8

@@ -1,0 +1,67 @@
+This C program reads words from user input and then displays a vertical histogram showing the length of each word. Here’s how it works in simple terms:
+
+
+1️⃣ Setting Up the Program
+The program starts by including the stdio.h library, which allows it to use functions like getchar() and putchar().
+Two constants are defined:
+
+MAXWORDLENGTH = 20 → This is the maximum length a word can have.
+MAXWORDS = 25 → The program can store up to 25 words.
+
+2️⃣ Declaring Variables
+The following variables are used:
+
+word_index, character, column → Used for loops and printing the histogram.
+word_count, word_length → Used to count words and their lengths.
+word_lengths[MAXWORDS] → This array stores the length of each word.
+
+3️⃣ Initializing the Array
+A for loop sets all values in the word_lengths array to 0.
+This ensures that the array starts with clean values.
+
+4️⃣ Reading the User Input
+The program uses getchar() to read characters one by one until EOF (End of File) is reached.
+It keeps increasing word_length for every letter in a word.
+When a space, new line (\n), or tab (\t) is found, it means the word has ended.
+The program stores the word’s length in word_lengths.
+It then resets word_length to 0 for the next word.
+
+5️⃣ Handling the Last Word
+If the last word in the input does not end with a space or newline, it would not be counted.
+So, the program checks if word_length > 0 and stores it before finishing the input process.
+
+6️⃣ Printing the Vertical Histogram
+A loop starts from the maximum word length (20) and prints rows from top to bottom.
+
+In each row:
+If a word’s length is greater than or equal to the current row number, it prints *.
+Otherwise, it prints a space ' '.
+
+Example Run
+Input:
+
+hello world programming in c
+
+hello → 5 letters
+
+world → 5 letters
+
+programming → 11 letters
+
+in → 2 letters
+
+c → 1 letter
+
+Output:
+
+        *    
+        *    
+        *    
+        *    
+        *    
+        *    
+  *  *  *    
+  *  *  *    
+  *  *  *    
+  *  *  *  * 
+  *  *  *  *  *
